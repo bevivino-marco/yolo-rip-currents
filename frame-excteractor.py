@@ -2,7 +2,7 @@ import cv2
 import os
 
 # Definisci il percorso del video
-video_name = 'how to identify rip currents_2_'
+video_name = 'francia'
 video_path = f'video_frame/video/{video_name}.mp4'
 
 # Definisci la cartella in cui salvare i frame estratti
@@ -25,7 +25,7 @@ while success:
     current_time = cap.get(cv2.CAP_PROP_POS_MSEC) / 1000
 
     # Estrai un frame ogni 10 secondi
-    if frame_count % (frame_rate * 3) == 0:
+    if frame_count % (frame_rate * 10) == 0:
         # Salva il frame estratto nella cartella specificata
         frame_name = f'{output_folder}/{video_name}{int(current_time)}.jpg'
         cv2.imwrite(frame_name, frame)
